@@ -4,6 +4,8 @@
     box-sizing: border-box;
 }
 
+
+
 body {
     font-family: 'Montserrat', sans-serif;
     line-height: 1.6;
@@ -45,6 +47,59 @@ body {
     background-color: #555;
     border-radius: 5px;
 }
+/* Ocultar el menú en móviles */
+.nav {
+    display: none; /* Oculta el menú por defecto */
+}
+
+/* Estilo del botón hamburguesa */
+.hamburger {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 2rem; /* Tamaño del icono */
+    cursor: pointer;
+}
+
+/* Mostrar el menú cuando se activa */
+.nav.active {
+    display: flex; /* Muestra el menú cuando se activa */
+    flex-direction: column; /* Coloca los enlaces uno debajo del otro */
+}
+
+/* Ajustes para el menú en móviles */
+@media (max-width: 768px) {
+    .nav {
+        width: 100%; /* Asegura que ocupe todo el ancho */
+        background-color: rgba(10, 10, 10, 0.8); /* Fondo del menú */
+        position: absolute; /* Posiciona el menú sobre otros elementos */
+        top: 60px; /* Ajusta según la altura del header */
+        left: 0;
+        z-index: 1000; /* Asegura que esté por encima de otros elementos */
+        display: none; /* Oculta por defecto */
+        padding: 1rem; /* Espaciado interno */
+        border-radius: 5px; /* Esquinas redondeadas */
+    }
+
+    .nav a {
+        padding: 0.5rem; /* Espaciado interno para los enlaces en móviles */
+        text-align: center; /* Centra el texto en los enlaces */
+    }
+}/* Ocultar el menú hamburguesa en pantallas grandes */
+@media (min-width: 768px) {
+    .hamburger {
+        display: none; /* Oculta el botón en pantallas grandes */
+    }
+
+    .nav {
+        display: flex !important; /* Asegura que el menú esté siempre visible en desktop */
+        flex-direction: row;
+        gap: 1rem;
+    }
+}
+html {
+    scroll-behavior: smooth; /* Aplica desplazamiento suave a toda la página */
+}
 
 /* Hero Section */
 .hero {
@@ -54,7 +109,7 @@ body {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content:end;
     align-items: center;
     padding: 2rem;
     text-align: center;
@@ -77,6 +132,7 @@ body {
     margin: 0 auto;
 }
 
+
 /* Experiencia Section */
 .experiencia {
     padding: 50px 0; /* Espaciado vertical para la sección */
@@ -84,57 +140,73 @@ body {
 
 .experiencia-container {
     display: flex; /* Usar flexbox para las columnas */
-    flex-direction: column; /* Cambiar a columna en pantallas pequeñas */
+    flex-direction: column; /* Por defecto, las columnas están apiladas (móviles) */
 }
 
+/* Texto de la experiencia */
 .experiencia-text {
-    flex: 1; /* Ocupa el espacio disponible en la columna izquierda */
     display: flex; /* Activa flexbox */
     flex-direction: column; /* Organiza los elementos en columna */
     justify-content: center; /* Centra verticalmente el contenido */
-    padding: 20px 10px; /* Padding alrededor del texto */
+    padding: 20px; /* Padding alrededor del texto */
     text-align: left; /* Alinea el texto a la izquierda */
 }
 
 .experiencia-text h1 {
-   font-size: 3rem; /* Tamaño de fuente ajustado para móviles */
-   margin-bottom: 15px; 
+   font-size: 1.5rem; /* Tamaño de fuente ajustado para móviles */
+   margin-bottom: 15px;
    font-weight: bold;
 }
 
 .experiencia-text p {
-   font-size: 1.5rem; /* Tamaño de fuente ajustado para móviles */
-   margin-bottom: 15px; 
+   font-size: 1rem; /* Tamaño de fuente ajustado para móviles */
+   margin-bottom: 15px;
    font-weight: lighter;
 }
 
 .experiencia-text ul {
-    font-size: 1.5rem; /* Tamaño de fuente ajustado para móviles */
+    font-size: 1rem; /* Tamaño de fuente ajustado para móviles */
     margin-left: 20px;
 }
 
+/* Imagen de la experiencia */
 .experiencia-image {
-    flex: 1; /* Ocupa el espacio disponible en la columna derecha */
-    padding: 20px; /* Padding alrededor de la imagen */
     display: flex; /* Activa flexbox para centrar la imagen */
     justify-content: center; /* Centra horizontalmente la imagen */
+    align-items: center; /* Centra verticalmente la imagen en su contenedor */
+    flex-grow: 1; /* Permite que la imagen ocupe el espacio restante */
+    padding: 0; /* Elimina cualquier padding adicional alrededor de la imagen */
 }
 
 .experiencia-image img {
-    width: 100%; /* Escala la imagen al ancho disponible de la columna */
-    max-width: 100%; /* Ancho máximo de la imagen al 100% del contenedor */
+    width: 100%; /* La imagen ocupa todo el ancho disponible del contenedor */
     height: auto; /* Mantiene la proporción de aspecto de la imagen */
 }
 
-/* Media Queries para Responsividad */
+/* Media Queries para pantallas más grandes (tabletas y desktop) */
 @media (min-width: 768px) {
     .experiencia-container {
-        flex-direction: row; /* Vuelve a columnas en pantallas más grandes */
+        flex-direction: row; /* Cambia a diseño en fila en pantallas grandes */
         align-items: center; /* Centra verticalmente los elementos en pantallas grandes */
+        height: auto;
+        gap: 20px; /* Espaciado entre texto e imagen */
+    }
+
+    .experiencia-text {
+        flex-basis: auto; /* Ocupa solo el espacio necesario según su contenido */
+        padding-left: 120px; /* Espaciado adicional a la izquierda en pantallas grandes */
+        text-align: left;
+    }
+
+    .experiencia-image {
+        flex-grow: 1; /* La imagen ocupa todo el espacio restante disponible */
+        max-width: calc(100% - 40px); /* Asegura que no haya espacios adicionales a los lados */
+        padding-left: 0;
+        padding-right: 0;
     }
 
     .experiencia-text h1 {
-        font-size: 5rem; /* Tamaño grande para pantallas grandes */
+        font-size: 4rem; /* Tamaño grande para pantallas grandes */
     }
 
     .experiencia-text p {
@@ -142,9 +214,41 @@ body {
     }
 
     .experiencia-text ul {
-        font-size: 2.5rem; /* Tamaño grande para pantallas grandes */
+        font-size: 2.3rem; /* Tamaño grande para pantallas grandes */
     }
 }
+
+/* Media Queries para dispositivos móviles (teléfonos) */
+@media (max-width: 767px) {
+    .experiencia-container {
+        flex-direction: column; /* Las columnas se apilan verticalmente en móviles */
+    }
+
+    .experiencia-image {
+        order: 2; /* La imagen se coloca debajo del texto en móviles */
+        width: 100%; /* La imagen ocupa todo el ancho disponible en móviles */
+        padding-left: 0;
+        padding-right: 0;
+        margin-top: 20px;
+    }
+
+    .experiencia-text {
+        order: 1; /* El texto se coloca arriba de la imagen en móviles */
+        padding-left: 10px;
+        padding-right: 10px;
+        text-align: center; /* Centra el texto horizontalmente en móviles */
+    }
+
+    .experiencia-text h1 {
+        font-size: 2rem; /* Ajuste del tamaño del título en móviles */
+    }
+
+    .experiencia-text p,
+    .experiencia-text ul {
+        font-size: 1rem; /* Ajuste del tamaño del texto en móviles */
+    }
+}
+
 
 /* Carrusel */
 .carousel-container {
@@ -319,7 +423,7 @@ body {
     .grid-container {
         grid-template-columns: repeat(1, 1fr);
     }
-
+}
 
 
 /* Media Queries */
@@ -380,5 +484,12 @@ body {
     .carousel img {
         width: 200px;
         height: 200px;
+    }
+    }
+
+    /* Media Query para dispositivos móviles */
+@media (max-width: 768px) { /* Ajusta el valor según tus necesidades */
+    .imagen-footer1 {
+        padding-right: 0; /* Elimina el padding derecho en móviles */
     }
 }
