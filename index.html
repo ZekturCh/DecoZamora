@@ -3,8 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet"><link rel="stylesheet" href="styles.css">
-    <link rel="icon" href="favicon.png" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet"><link rel="stylesheet" href="styless.css">
     <title>DecoZamora - Soluciones para tu hogar</title>
 </head>
 
@@ -13,15 +12,18 @@
         <div class="logo">
             <img src="DZMLOGO.png" alt="Logo">
         </div>
+        <button class="hamburger" aria-label="Toggle menu">
+            &#9776; <!-- Este es el símbolo de menú hamburguesa -->
+        </button>
         <nav class="nav">
-            <a href="#">Inicio</a>
-            <a href="#">Servicios</a>
-            <a href="#">Clientes</a>
-            <a href="#">Contacto</a>
+            <a href="#uno">Inicio</a>
+            <a href="#dos">Servicios</a>
+            <a href="#tres">Clientes</a>
+            <a href="#cuatro">Contacto</a>
         </nav>
     </header>
     <!-- Sección con fondo -->
-    <section class="hero">
+    <section id="uno" class="hero">
         <div class="hero-text">
             <h1>Nuestro Equipo            </h1>
             <p>Tu tiempo vale <b>oro</b> y nuestro servicio  <b><i>también</i></b></p>
@@ -29,7 +31,7 @@
     </section>
 
   <!-- Nueva sección: Experiencia -->
-  <section class="experiencia">
+  <section id="dos" class="experiencia">
       <div class="experiencia-container">
           <div class="experiencia-text">
               <h1>Limpieza es SALUD</h1>
@@ -46,8 +48,8 @@
       </div>
   </section>
 
-<!-- Nueva sección: Clientes -->
-<section class="LosServicios">
+<!-- Nueva sección: Servicios -->
+<section id="tres" class="LosServicios">
     <div class="grid-container">
         <div class="grid-item">
             <img src="gimei.png" alt="Imagen 1">
@@ -75,7 +77,7 @@
         </div>
     </div>
 </section>
-<section class="Afiliados">
+<section id="cuatro" class="Afiliados">
     <div class="carousel-container">
         <H1>Ellos ya confiaron en nosotros</H1>
         <div class="carousel" id="carousel">
@@ -120,5 +122,28 @@
         </div>
     </div>
 </footer>
+<script>
+    
+document.querySelector('.hamburger').addEventListener('click', function() {
+    const nav = document.querySelector('.nav');
+    nav.classList.toggle('active'); // Alterna la clase 'active' al hacer clic
+});
+
+document.querySelectorAll('.nav a').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+        e.preventDefault(); // Evita el comportamiento predeterminado del enlace
+
+        const targetId = this.getAttribute('href'); // Obtiene el ID del objetivo
+        const targetElement = document.querySelector(targetId); // Selecciona el elemento objetivo
+
+        // Desplazamiento suave
+        targetElement.scrollIntoView({
+            behavior: 'smooth', // Desplazamiento suave
+            block: 'start' // Alineación al inicio de la sección
+        });
+    });
+});
+</script>
 </body>
 </html>
+
