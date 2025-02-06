@@ -43,6 +43,8 @@
                   <li>♻️ Productos ecoamigable</li>
                   <li>👨🏽‍🔬Personal altamente capacitado </li>
               </ul>
+              <br>
+        <button id="sonidoBtn">Escucha a Melissa!</button>
           </div>
           <div class="experiencia-image">
             <video autoplay loop muted playsinline class="fullscreen-video">
@@ -177,6 +179,63 @@ document.addEventListener("DOMContentLoaded", function() {
     video.addEventListener("canplaythrough", () => {
         observer.observe(video);
     });
+});
+
+document.addEventListener("DOMContentLoaded", function() {
+    let video = document.getElementById('miVideo');
+    let sonidoBtn = document.getElementById('sonidoBtn');
+
+    if (!video || !sonidoBtn) return;
+
+    // Función para cambiar estado de sonido y texto del botón
+    function toggleSonido() {
+        if (video.muted) {
+            video.muted = false;
+            sonidoBtn.textContent = 'Desactivar Sonido';
+        } else {
+            video.muted = true;
+            sonidoBtn.textContent = 'Activar Sonido';
+        }
+        
+        // Si se está reproduciendo automáticamente en móviles, asegúrate de que esto no cause problemas.
+        // En general, al hacer clic ya se permite la reproducción automática.
+        try { 
+            if (!video.paused) { 
+                // No es necesario hacer nada aquí si ya está reproduciéndose.
+                console.log("El vídeo ya está reproduciéndose.");
+            } else { 
+                video.play();
+            }
+        } catch(e) { 
+            console.error("Error al reproducir:", e);
+        }
+        
+        // Para evitar que se detenga el vídeo cuando cambias el estado del volumen,
+        // asegúrate de mantenerlo en ejecución si estaba así antes.
+        
+        try { 
+            if (document.pictureInPictureEnabled && document.pictureInPictureElement === null && !document.fullscreenElement) {
+                console.log("No hay Picture-in-Picture ni Fullscreen");
+                if (!video.paused) { 
+                    console.log("El vídeo sigue reproduciéndose.");
+                    return;  
+                } else {  
+                    console.log("Reproduciendo...");
+                    video.play();  
+                }
+                
+            }
+            
+         } catch(e){console.error(e)}
+         
+         
+
+    
+}
+
+// Agrega evento click al botón para cambiar estado de audio y texto del botón.
+sonidoBtn.addEventListener('click', toggleSonindo);
+
 });
 
 </script>
