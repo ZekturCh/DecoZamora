@@ -181,10 +181,13 @@ html {
 }
 
 .experiencia-image video {
-    width: 100%; /* Ensures the video takes the full width of its container */
-    height: auto; /* Keeps aspect ratio */
-    border-radius: 10px; /* Optional: Adds rounded corners */
+    width: 100%;
+    max-width: 500px; /* Ajusta según tu diseño */
+    height: auto;
+    border-radius: 10px; /* Opcional, para esquinas redondeadas */
+    object-fit: cover; /* Evita distorsión */
 }
+
 /* Media Queries para pantallas más grandes (tabletas y desktop) */
 @media (min-width: 768px) {
     .experiencia-container {
