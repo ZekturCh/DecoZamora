@@ -166,12 +166,12 @@ html {
         font-size: 45px;
    }
 .experiencia-text p,
-.experiencia-text ol {
+.experiencia-text ul {
         font-size: 2.5rem; /* Ajuste del tamaño del texto en móviles */
         font-size: 25px;
     }
 
-.experiencia-text ol{
+.experiencia-text ul{
         text-align: left;
     }
 /* Ajuste del video */
