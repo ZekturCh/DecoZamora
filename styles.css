@@ -162,14 +162,13 @@ html {
     text-align: left;
 }
 
+.experiencia-text h1 {
+     font-size: 4rem; /* Ajuste del tamaño del título en móviles */
+   }
 
-    .experiencia-text h1 {
-        font-size: 4rem; /* Ajuste del tamaño del título en móviles */
-    }
-
-    .experiencia-text p,
-    .experiencia-text ul {
-        font-size: 3rem; /* Ajuste del tamaño del texto en móviles */
+.experiencia-text p,
+.experiencia-text ul {
+        font-size: 2.5rem; /* Ajuste del tamaño del texto en móviles */
     }
 
 
@@ -214,7 +213,7 @@ html {
     }
 
     .experiencia-text h1 {
-        font-size: 2rem; /* Ajuste del tamaño del título en móviles */
+        font-size: 2.5rem; /* Ajuste del tamaño del título en móviles */
     }
 
     .experiencia-text p,
