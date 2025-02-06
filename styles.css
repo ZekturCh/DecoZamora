@@ -376,6 +376,10 @@ html {
     max-width: 200px;
     height: auto;
 }
+.LosServicios h1{
+    text-align: center;
+}
+
 .grid-container {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
