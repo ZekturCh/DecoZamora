@@ -45,11 +45,10 @@
               </ul>
           </div>
           <div class="experiencia-image">
-            <video autoplay loop muted playsinline class="fullscreen-video">
-                <source src="video.mp4" type="video/mp4">
-                Tu navegador no soporta videos HTML5
+              <video class="experiencia-image video" autoplay loop controls>
+                    <source src="video.mp4" type="video/mp4">
+                    Tu navegador no soporta videos HTML5
                 </video>
-                <button id="activarSonido" class="boton-sonido">🔊 Activar sonido</button>
           </div>
       </div>
   </section>
@@ -180,17 +179,6 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 });
 
-document.addEventListener("DOMContentLoaded", function () {
-    let video = document.getElementById("miVideo");
-    let botonSonido = document.getElementById("activarSonido");
-
-    // Intentar reproducir el video con sonido si el usuario hace clic
-    botonSonido.addEventListener("click", function () {
-        video.muted = false; // Activar sonido
-        video.play(); // Reproducir nuevamente con sonido
-        botonSonido.style.display = "none"; // Ocultar botón después de activar sonido
-    });
-});
 </script>
 </body>
 </html>
