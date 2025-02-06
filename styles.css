@@ -476,7 +476,7 @@ html {
         flex-wrap: wrap;
     }
 
-    .columna-derecha img {
+    .imagen-footer {
         width: 25%;  /* Reducimos el tamaño al 25% para que entren en una fila */
         max-width: 80px; /* Controlamos el tamaño máximo */
         height: auto; /* Mantiene la proporción */
