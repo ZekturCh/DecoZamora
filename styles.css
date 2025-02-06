@@ -73,7 +73,7 @@ body {
         width: 100%; /* Asegura que ocupe todo el ancho */
         background-color: rgba(10, 10, 10, 0.8); /* Fondo del menú */
         position: absolute; /* Posiciona el menú sobre otros elementos */
-        top: 60px; /* Ajusta según la altura del header */
+        top: 98px; /* Ajusta según la altura del header */
         left: 0;
         z-index: 1000; /* Asegura que esté por encima de otros elementos */
         display: none; /* Oculta por defecto */
