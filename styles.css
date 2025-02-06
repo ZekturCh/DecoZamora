@@ -132,31 +132,34 @@ html {
     margin: 0 auto;
 }
 
-
 /* Contenedor principal */
 .experiencia {
     height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 0; /* Elimina cualquier margen o padding */
+    padding: 0;
 }
 
 /* Asegurar que el contenido se distribuya correctamente */
 .experiencia-container {
     display: flex;
     flex-direction: row; /* Elementos en fila */
-    width: 100vw; /* Ocupa el ancho completo */
-    height: 100vh; /* Ocupa la altura completa */
+    width: 80vw; /* Limita el ancho para que no ocupe toda la pantalla */
+    max-width: 1200px; /* Evita que se estire demasiado en pantallas grandes */
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem; /* Espacio entre el texto y el video */
 }
 
 /* Ajuste del texto */
 .experiencia-text {
     flex: 1;
-    padding: 5%;
     display: flex;
     flex-direction: column;
     justify-content: center;
+    text-align: left;
 }
 
 /* Ajuste del video */
@@ -168,17 +171,20 @@ html {
     overflow: hidden;
 }
 
-/* Ajuste del video para que siempre llene su espacio */
+/* Ajuste del video para que se escale correctamente */
 .experiencia-image video {
     height: 100vh;
-    width: 100%;
-    object-fit: cover; /* Recorta para llenar todo sin distorsionarse */
+    width: auto; /* Mantiene la proporción */
+    max-width: 100%; /* Evita que sobresalga */
+    object-fit: cover;
 }
 
 /* Responsivo para móviles */
 @media (max-width: 768px) {
     .experiencia-container {
         flex-direction: column; /* Pila el texto y video en móviles */
+        width: 100%;
+        text-align: center;
     }
 
     .experiencia-text {
@@ -188,7 +194,7 @@ html {
 
     .experiencia-image {
         width: 100%;
-        height: 50vh; /* Reduce el tamaño del video en móviles */
+        height: 50vh;
     }
 
     .experiencia-image video {
@@ -196,6 +202,7 @@ html {
         height: 100%;
     }
 }
+
 /* Carrusel */
 .carousel-container {
     width: 100%;
