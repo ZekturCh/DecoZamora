@@ -170,19 +170,21 @@ html {
 }
 
 /* Imagen de la experiencia */
+/* Experiencia Section */
 .experiencia-image {
-    display: flex; /* Activa flexbox para centrar la imagen */
-    justify-content: center; /* Centra horizontalmente la imagen */
-    align-items: center; /* Centra verticalmente la imagen en su contenedor */
-    flex-grow: 1; /* Permite que la imagen ocupe el espacio restante */
-    padding: 0; /* Elimina cualquier padding adicional alrededor de la imagen */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
+    width: 100%;
+    max-width: 600px; /* Adjust max width as needed */
 }
 
-.experiencia-image img {
-    width: 100%; /* La imagen ocupa todo el ancho disponible del contenedor */
-    height: auto; /* Mantiene la proporción de aspecto de la imagen */
+.experiencia-image video {
+    width: 100%; /* Ensures the video takes the full width of its container */
+    height: auto; /* Keeps aspect ratio */
+    border-radius: 10px; /* Optional: Adds rounded corners */
 }
-
 /* Media Queries para pantallas más grandes (tabletas y desktop) */
 @media (min-width: 768px) {
     .experiencia-container {
