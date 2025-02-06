@@ -190,7 +190,19 @@ html {
     max-width: 100%; /* Evita que sobresalga */
     object-fit: cover;
 }
-
+.boton-sonido {
+        position: absolute;
+        bottom: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+        background: rgba(0, 0, 0, 0.7);
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        cursor: pointer;
+        font-size: 16px;
+        border-radius: 5px;
+    }
 /* Responsivo para móviles */
 @media (max-width: 768px) {
     .experiencia-container {
