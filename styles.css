@@ -453,7 +453,7 @@ html {
     }
     
     .carousel-container h1{
-    font-size: 25px;
+    font-size: 50px;
 }
 }
 
@@ -479,7 +479,7 @@ html {
         gap: 1rem;
     }
     .carousel-container h1{
-    font-size: 50px;
+    font-size: 25px;
     }
     
     .carousel img {
@@ -499,7 +499,7 @@ html {
         flex-wrap: wrap;
     }
     .carousel-container h1{
-    font-size: 50px;
+    font-size: 25px;
 }
     .imagen-footer {
         max-width: 100px; /* Controlamos el tamaño máximo */
