@@ -451,6 +451,10 @@ html {
         width: 300px;
         height: 300px;
     }
+    
+    .carousel-container h1{
+    font-size: 25px;
+}
 }
 
 @media (max-width: 480px) {
