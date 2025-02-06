@@ -15,6 +15,15 @@
             text-align: center;
             margin: 20px;
         }
+.header {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0rem 1.5rem;
+    background-color: rgba(10, 10, 10, 0.8);
+    position: relative;
+}
         .logo img {
             height: 90px;
             width: auto;
@@ -74,14 +83,41 @@
     </form>
 
     <script>
+        function validarNombre(input) {
+            input.value = input.value.replace(/[^a-zA-ZáéíóúÁÉÍÓÚñÑ\s]/g, '');
+        }
+
+        function validarDNI(input) {
+            input.value = input.value.replace(/\D/g, '');
+        }
+
+        function validarCorreo(input) {
+            if (!input.value.includes('@')) {
+                input.setCustomValidity("El correo debe contener '@'.");
+            } else {
+                input.setCustomValidity("");
+            }
+        }
+
         function enviarWhatsApp() {
-            let nombre = document.getElementById("nombre").value;
-            let dni = document.getElementById("dni").value;
-            let correo = document.getElementById("correo").value;
-            let detalle = document.getElementById("detalle").value;
+            let nombre = document.getElementById("nombre").value.trim();
+            let dni = document.getElementById("dni").value.trim();
+            let correo = document.getElementById("correo").value.trim();
+            let detalle = document.getElementById("detalle").value.trim();
 
             if (nombre === "" || dni === "" || correo === "" || detalle === "") {
                 alert("Por favor, complete todos los campos.");
+                return;
+            }
+
+            if (dni.length !== 8) {
+                alert("El DNI debe tener 8 dígitos.");
+                return;
+            }
+
+            let emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(correo)) {
+                alert("Ingrese un correo válido.");
                 return;
             }
 
