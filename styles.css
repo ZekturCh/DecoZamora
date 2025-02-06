@@ -170,90 +170,44 @@ html {
 }
 
 /* Imagen de la experiencia */
-/* Experiencia Section */
+/* Ajuste del video */
 .experiencia-image {
+    flex: 1; /* Ocupa el 50% del ancho */
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-grow: 1;
-    width: 100%;
-    max-width: 600px; /* Adjust max width as needed */
+    overflow: hidden;
 }
 
+/* Video ocupa el 100% de la altura sin distorsionarse */
 .experiencia-image video {
-    width: 100%;
-    max-width: 500px; /* Ajusta según tu diseño */
-    height: auto;
-    border-radius: 10px; /* Opcional, para esquinas redondeadas */
-    object-fit: cover; /* Evita distorsión */
+    height: 100vh; /* Ocupa el 100% de la pantalla */
+    width: auto; /* Se ajusta proporcionalmente */
+    max-width: 100%; /* Evita que sobresalga */
+    object-fit: cover; /* Se recorta en caso de ser necesario */
 }
 
-/* Media Queries para pantallas más grandes (tabletas y desktop) */
-@media (min-width: 768px) {
+/* Responsivo para móviles */
+@media (max-width: 768px) {
     .experiencia-container {
-        flex-direction: row; /* Cambia a diseño en fila en pantallas grandes */
-        align-items: center; /* Centra verticalmente los elementos en pantallas grandes */
-        height: auto;
-        gap: 20px; /* Espaciado entre texto e imagen */
+        flex-direction: column; /* Texto y video en columna */
     }
 
     .experiencia-text {
-        flex-basis: auto; /* Ocupa solo el espacio necesario según su contenido */
-        padding-left: 120px; /* Espaciado adicional a la izquierda en pantallas grandes */
-        text-align: left;
+        width: 100%;
+        text-align: center;
     }
 
     .experiencia-image {
-        flex-grow: 1; /* La imagen ocupa todo el espacio restante disponible */
-        max-width: calc(100% - 40px); /* Asegura que no haya espacios adicionales a los lados */
-        padding-left: 0;
-        padding-right: 0;
+        width: 100%;
+        height: 50vh; /* En móviles, el video ocupa la mitad de la pantalla */
     }
 
-    .experiencia-text h1 {
-        font-size: 4rem; /* Tamaño grande para pantallas grandes */
-    }
-
-    .experiencia-text p {
-        font-size: 2rem; /* Tamaño grande para pantallas grandes */
-    }
-
-    .experiencia-text ul {
-        font-size: 2.3rem; /* Tamaño grande para pantallas grandes */
+    .experiencia-image video {
+        width: 100%;
+        height: 100%;
     }
 }
-
-/* Media Queries para dispositivos móviles (teléfonos) */
-@media (max-width: 767px) {
-    .experiencia-container {
-        flex-direction: column; /* Las columnas se apilan verticalmente en móviles */
-    }
-
-    .experiencia-image {
-        order: 2; /* La imagen se coloca debajo del texto en móviles */
-        width: 100%; /* La imagen ocupa todo el ancho disponible en móviles */
-        padding-left: 0;
-        padding-right: 0;
-        margin-top: 20px;
-    }
-
-    .experiencia-text {
-        order: 1; /* El texto se coloca arriba de la imagen en móviles */
-        padding-left: 10px;
-        padding-right: 10px;
-        text-align: center; /* Centra el texto horizontalmente en móviles */
-    }
-
-    .experiencia-text h1 {
-        font-size: 2rem; /* Ajuste del tamaño del título en móviles */
-    }
-
-    .experiencia-text p,
-    .experiencia-text ul {
-        font-size: 1rem; /* Ajuste del tamaño del texto en móviles */
-    }
-}
-
 
 /* Carrusel */
 .carousel-container {
