@@ -478,6 +478,9 @@ html {
     .carousel {
         gap: 1rem;
     }
+    .carousel-container h1{
+    font-size: 50px;
+    }
     
     .carousel img {
         width: 200px;
@@ -495,7 +498,9 @@ html {
         gap: 5px; /* Espaciado entre imágenes */
         flex-wrap: wrap;
     }
-
+    .carousel-container h1{
+    font-size: 50px;
+}
     .imagen-footer {
         max-width: 100px; /* Controlamos el tamaño máximo */
         height: auto; /* Mantiene la proporción */
