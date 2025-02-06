@@ -162,6 +162,17 @@ html {
     text-align: left;
 }
 
+
+    .experiencia-text h1 {
+        font-size: 4rem; /* Ajuste del tamaño del título en móviles */
+    }
+
+    .experiencia-text p,
+    .experiencia-text ul {
+        font-size: 3rem; /* Ajuste del tamaño del texto en móviles */
+    }
+
+
 /* Ajuste del video */
 .experiencia-image {
     flex: 1;
@@ -200,6 +211,15 @@ html {
     .experiencia-image video {
         width: 100%;
         height: 100%;
+    }
+
+    .experiencia-text h1 {
+        font-size: 2rem; /* Ajuste del tamaño del título en móviles */
+    }
+
+    .experiencia-text p,
+    .experiencia-text ul {
+        font-size: 1rem; /* Ajuste del tamaño del texto en móviles */
     }
 }
 
