@@ -167,7 +167,7 @@ document.addEventListener("DOMContentLoaded", function() {
     let observer = new IntersectionObserver(entries => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
-                video.muted = true; // Asegura que el video esté silenciado (necesario en móviles)
+                video.muted = false; // Asegura que el video esté silenciado (necesario en móviles)
                 video.play().catch(error => console.log("No se pudo reproducir automáticamente:", error));
                 observer.disconnect();
             }
