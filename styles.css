@@ -471,19 +471,16 @@ html {
     .columna-derecha {
         display: flex;
         justify-content: center;
+        align-items: center;
+        gap: 5px; /* Espaciado entre imágenes */
         flex-wrap: wrap;
-        gap: 10px; /* Espacio entre imágenes */
     }
 
     .columna-derecha img {
-        width: 30%; /* Reducir tamaño de las imágenes */
-        max-width: 100px; /* Evitar imágenes demasiado grandes */
-        height: auto;
+        width: 25%;  /* Reducimos el tamaño al 25% para que entren en una fila */
+        max-width: 80px; /* Controlamos el tamaño máximo */
+        height: auto; /* Mantiene la proporción */
     }
 }
 
-@media (max-width: 768px) { /* Ajusta el valor según tus necesidades */
-    .imagen-footer1 {
-        padding-right: 0; /* Elimina el padding derecho en móviles */
-    }
-}
+
