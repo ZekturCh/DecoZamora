@@ -161,16 +161,24 @@ document.querySelectorAll('.nav a').forEach(anchor => {
 
 document.addEventListener("DOMContentLoaded", function() {
     let video = document.querySelector(".experiencia-image video");
+
+    if (!video) return; // Evita errores si el video no está presente
+
     let observer = new IntersectionObserver(entries => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
-                video.play();
+                video.muted = true; // Asegura que el video esté silenciado (necesario en móviles)
+                video.play().catch(error => console.log("No se pudo reproducir automáticamente:", error));
                 observer.disconnect();
             }
         });
     });
-    observer.observe(video);
+
+    video.addEventListener("canplaythrough", () => {
+        observer.observe(video);
+    });
 });
+
 </script>
 </body>
 </html>
